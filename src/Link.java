@@ -3,19 +3,19 @@ public class Link implements Runnable
 {
 	Message message;
 	Random rand;
-	
+
 	//delay ranges
 	int min,max;
 
 	public Link(Message message)
 	{
 		this.message = message;
-		rand = new Random(); 
-		
+		rand = new Random();
+
 		min = 900;
 		max = 1100;
-				
-	
+
+
 	}
 	public void run() {
 		//Delay in transmission
@@ -25,8 +25,8 @@ public class Link implements Runnable
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+
 		message.receiver.receive(message);
 	}
-	
+
 }
